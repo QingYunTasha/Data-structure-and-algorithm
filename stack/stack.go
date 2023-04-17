@@ -10,8 +10,8 @@ func NewStack[T any]() *Stack[T] {
 	}
 }
 
-func (stk *Stack[T]) Push(key T) {
-	stk.slice = append(stk.slice, key)
+func (stk *Stack[T]) Push(element T) {
+	stk.slice = append(stk.slice, element)
 }
 
 func (stk *Stack[T]) Pop() (T, bool) {
