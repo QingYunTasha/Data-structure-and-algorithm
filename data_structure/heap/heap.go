@@ -6,7 +6,14 @@ type Element interface {
 
 type Heap []Element
 
-func NewHeap(e Element) Heap { return Heap{e} }
+func Init(eles []Element) Heap {
+	// offset
+	h := Heap{eles[0]}
+	for _, e := range eles {
+		h.Push(e)
+	}
+	return h
+}
 
 func (h Heap) Len() int { return len(h) - 1 }
 
