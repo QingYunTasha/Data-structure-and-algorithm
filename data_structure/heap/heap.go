@@ -1,41 +1,45 @@
 package heap
 
-type Node struct {
-	Priority uint
+type Element interface {
+	Less(e Element) bool
 }
 
-type PriorityQueue []Node
+type Heap []Element
 
-func NewPriorityQueue() PriorityQueue { return append(PriorityQueue{}, Node{}) }
+func NewHeap(e Element) Heap { return Heap{e} }
 
-func (q *PriorityQueue) Push(n Node) {
-	*q = append(*q, n)
-	q.up(len(*q) - 1)
+func (h Heap) Len() int { return len(h) - 1 }
+
+func (h Heap) swap(i, j int) { h[i], h[j] = h[j], h[i] }
+
+func (h *Heap) Push(e Element) {
+	*h = append(*h, e)
+	h.up(len(*h) - 1)
 }
 
-func (q *PriorityQueue) Pop() Node {
-	n := len(*q) - 1
-	res := (*q)[1]
-	(*q)[1] = (*q)[n]
-	*q = (*q)[:n]
-	q.down(1)
+func (h *Heap) Pop() Element {
+	n := len(*h) - 1
+	res := (*h)[1]
+	(*h)[1] = (*h)[n]
+	*h = (*h)[:n]
+	h.down(1)
 	return res
 }
 
-func (q PriorityQueue) up(i int) {
-	for j := i >> 1; i > 1 && q[j].Priority > q[i].Priority; i, j = j, j>>1 {
-		q[i], q[j] = q[j], q[i]
+func (h Heap) up(i int) {
+	for j := i >> 1; i > 1 && h[j].Less(h[i]); i, j = j, j>>1 {
+		h.swap(i, j)
 	}
 }
 
-func (q PriorityQueue) down(i int) {
-	for j := i << 1; j < len(q); i, j = j, j<<1 {
-		if j+1 < len(q) && q[j].Priority > q[j+1].Priority {
+func (h Heap) down(i int) {
+	for j := i << 1; j < len(h); i, j = j, j<<1 {
+		if j+1 < len(h) && h[j].Less(h[j+1]) {
 			j++
 		}
-		if q[i].Priority < q[j].Priority {
+		if h[j].Less(h[i]) {
 			break
 		}
-		q[i], q[j] = q[j], q[i]
+		h.swap(i, j)
 	}
 }
