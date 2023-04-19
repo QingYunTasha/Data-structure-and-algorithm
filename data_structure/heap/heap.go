@@ -11,9 +11,9 @@ type Element interface {
 
 type Heap []Element
 
-func Init(eles []Element) Heap {
+func Init(eles []Element) *Heap {
 	// offset
-	h := Heap{eles[0]}
+	h := &Heap{eles[0]}
 	for _, e := range eles {
 		h.Push(e)
 	}
