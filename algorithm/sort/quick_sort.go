@@ -26,7 +26,7 @@ func qSortInMem(nums []int, l, r int) {
 		return
 	}
 
-	i, j, pivot := l+1, r, nums[l]
+	i, j, pivot := l+1, r, nums[(l+r)>>1]
 	for i < j {
 		for nums[i] < pivot && i < r {
 			i++
