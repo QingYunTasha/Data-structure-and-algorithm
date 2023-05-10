@@ -1,5 +1,10 @@
 package sort
 
+/* @tags:sort,two pointer,divide and conquer */
+
+// pivot select
+// in / out memory
+// recursive / iterative
 func qSortOutMem(nums []int) []int {
 	if len(nums) == 0 {
 		return []int{}
@@ -7,7 +12,7 @@ func qSortOutMem(nums []int) []int {
 		return nums
 	}
 
-	l, r, pivot := []int{}, []int{}, nums[0]
+	l, r, pivot := []int{}, []int{}, nums[(0+len(nums)-1)>>1]
 	for _, num := range nums[1:] {
 		if num < pivot {
 			l = append(l, num)
@@ -46,4 +51,27 @@ func qSortInMem(nums []int, l, r int) {
 	qSortInMem(nums, j+1, r)
 }
 
-func qSortInPartition()
+func qSortInPartition(nums []int, l, r int) {
+	if l >= r {
+		return
+	}
+
+	partition := func(nums []int, l, r int) int {
+		pivot := nums[r]
+		i := l - 1
+
+		for j := l; j < r; j++ {
+			if nums[j] < pivot {
+				i++
+				nums[i], nums[j] = nums[j], nums[i]
+			}
+		}
+		i++
+		nums[i], nums[r] = nums[r], nums[i]
+		return i
+	}
+
+	pi := partition(nums, l, r)
+	qSortInPartition(nums, l, pi-1)
+	qSortInPartition(nums, pi+1, r)
+}
