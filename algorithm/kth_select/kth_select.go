@@ -1,5 +1,7 @@
 package kthselect
 
+/* @tags: sort */
+
 import (
 	"fmt"
 	"sort"

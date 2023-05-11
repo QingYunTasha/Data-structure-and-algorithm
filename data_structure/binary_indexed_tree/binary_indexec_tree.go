@@ -1,5 +1,7 @@
 package binaryindexedtree
 
+/* @tags: tree,bit operation,prefix sum */
+
 /*
 Use: Compute dynamic prefix sum
 Complexity:

@@ -1,10 +1,12 @@
+package heap
+
+/* @tags: heap,priority queue */
+
 // The difference between built-in heap is:
 // You only need to implement the Element interface
 // and the Less method which is used to compare elements
 // And, there is some performance optimization than built-in at Pop()
 // because built-in sacrifice some performance for better flexibility
-package heap
-
 type Element interface {
 	Less(e Element) bool
 }

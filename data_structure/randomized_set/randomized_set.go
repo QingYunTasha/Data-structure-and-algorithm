@@ -1,5 +1,7 @@
 package randomizedset
 
+/* @tags: set,random */
+
 import (
 	"math/rand"
 )
