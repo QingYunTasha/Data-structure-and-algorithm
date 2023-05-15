@@ -1,5 +1,7 @@
 package differencearray
 
+/* @tags: array */
+
 /*
 Do interval udpate l times first, then query k times
 For each interval update, we also need to update two values, O(n * l) -> O(1 * l)

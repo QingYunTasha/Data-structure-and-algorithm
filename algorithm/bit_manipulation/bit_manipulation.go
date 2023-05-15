@@ -1,5 +1,7 @@
 package bitmanipulation
 
+/* @tags: bit manipulation */
+
 func Multiple2(in int) int {
 	return in << 1
 }

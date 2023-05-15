@@ -1,5 +1,7 @@
 package queue
 
+/* @tags: queue */
+
 type Queue[T any] struct {
 	slice []T
 }

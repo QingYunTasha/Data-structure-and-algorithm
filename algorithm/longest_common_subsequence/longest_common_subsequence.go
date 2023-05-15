@@ -1,5 +1,7 @@
 package longestcommonsubsequence
 
+/* @tags: LCS,dynamic programming */
+
 func longestCommonSubsequence(word1, word2 string) int {
 	m, n := len(word1), len(word2)
 	dp := make([][]int, m)

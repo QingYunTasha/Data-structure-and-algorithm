@@ -1,5 +1,7 @@
 package circularqueue
 
+/* @tags: circular,queue */
+
 type MyCircularQueue struct {
 	head, tail int
 	cap        int

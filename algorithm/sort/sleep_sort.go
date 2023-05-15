@@ -1,5 +1,7 @@
 package sort
 
+/* @tags: sort */
+
 import (
 	"time"
 )

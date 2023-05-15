@@ -1,5 +1,7 @@
 package radixtree
 
+/* @tags: tree */
+
 type radixTree struct {
 	children map[string]*radixTree
 }

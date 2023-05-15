@@ -1,5 +1,7 @@
 package prefixsumarray
 
+/* @tags: array,prefix sum */
+
 func NewPreFixSumArray(in []int) []int {
 	preFixSumArray := make([]int, len(in))
 

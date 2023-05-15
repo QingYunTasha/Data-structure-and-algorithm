@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 def topoSortBfs(graph: dict) -> list[int]:
     # add indegree
     inDeg = { node: 0 for node in graph}

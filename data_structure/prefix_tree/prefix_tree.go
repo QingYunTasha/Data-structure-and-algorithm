@@ -1,5 +1,7 @@
 package prefixtree
 
+/* @tags: prefix tree,tree */
+
 type Trie struct {
 	children map[byte]*Trie
 	isWord   bool
