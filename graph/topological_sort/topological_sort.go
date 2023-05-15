@@ -51,6 +51,24 @@ func TopoSortRemoveVertix(graph map[int][]int) (seq []int) {
 }
 
 func TopoSortDfs(graph map[int][]int) []int {
+	isntRootNodes := map[int]bool{}
+	for _, edges := range graph {
+		for _, edge := range edges {
+			isntRootNodes[edge] = true
+		}
+	}
+
+	rootNodes := []int{}
+	for node := range graph {
+		if _, ok := isntRootNodes[node]; !ok {
+			rootNodes = append(rootNodes, node)
+		}
+	}
+
+	for _, node := range rootNodes {
+
+	}
+
 	seq := []int{}
 
 	return seq
