@@ -1,7 +1,8 @@
 package queue
 
-/* @tags: queue */
+/* @tags: queue,array,linked list,circular list */
 
+// array
 type Queue[T any] struct {
 	slice []T
 }
