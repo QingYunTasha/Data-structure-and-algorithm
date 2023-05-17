@@ -65,11 +65,26 @@ func TopoSortDfs(graph map[int][]int) []int {
 		}
 	}
 
+	visited := map[int]bool{}
+	reverseSeq := []int{}
+	var dfs func(graph map[int][]int, root int, visited map[int]bool, seq *[]int)
+	dfs = func(graph map[int][]int, root int, visited map[int]bool, seq *[]int) {
+		if _, ok := visited[root]; ok {
+			return
+		}
+		for _, v := range graph[root] {
+			dfs(graph, v, visited, seq)
+		}
+		*seq = append(*seq, root)
+	}
 	for _, node := range rootNodes {
-
+		dfs(graph, node, visited, &reverseSeq)
 	}
 
 	seq := []int{}
+	for i := len(reverseSeq) - 1; i >= 0; i-- {
+		seq = append(seq, reverseSeq[i])
+	}
 
 	return seq
 }
