@@ -17,7 +17,7 @@ func find(x int) int {
 	// If x != UF[x], we use the find function again on x's parent UF[x]
 	// until we find the root and set it as the parent (value) of x in UF.
 	if x != parents[x] {
-		parents[x] = find(x)
+		parents[x] = find(parents[x])
 	}
 	return parents[x]
 }
