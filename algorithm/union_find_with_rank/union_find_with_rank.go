@@ -1,6 +1,6 @@
 package unionfindwithrank
 
-/* @tags: union find */
+/* @tags: union find,group */
 
 var parents map[int]int
 var ranks map[int]int

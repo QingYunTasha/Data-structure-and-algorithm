@@ -1,6 +1,6 @@
 package unionfind
 
-/* @tags: union find */
+/* @tags: union find,group */
 
 // UF is a hash map where you can find the root of a group of elements giving an element.
 // A key in UF is a element, UF[x] is x's parent.
