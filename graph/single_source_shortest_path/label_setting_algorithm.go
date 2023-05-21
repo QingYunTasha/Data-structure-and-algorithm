@@ -6,7 +6,6 @@ import "math"
 
 func LabelSettingAlgorithm(graph [][]int, start, end int) int {
 	n := len(graph)
-	res := math.MaxInt
 	dis := make([]int, n)
 	for i := 0; i < n; i++ {
 		dis[i] = math.MaxInt
@@ -15,6 +14,7 @@ func LabelSettingAlgorithm(graph [][]int, start, end int) int {
 	visited := make([]bool, n)
 
 	dis[start] = 0
+	// use to find path
 	parent[start] = start
 	visited[start] = true
 
@@ -46,5 +46,5 @@ func LabelSettingAlgorithm(graph [][]int, start, end int) int {
 		visited[b] = true
 	}
 
-	return res
+	return dis[end]
 }
