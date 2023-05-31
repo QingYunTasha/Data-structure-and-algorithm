@@ -3,31 +3,45 @@ data structure and algorithm implementation
 
 
 # Learning process
-## alg
-- [ ] linked list
-- [ ] binary search
+- [ ] Basic
+    - [ ] dynamic programming
+    - [ ] greedy
+    - [ ] divide and conquer
+    - [ ] back tracking
+- [ ] complexity
+    - [ ] time
+    - [ ] space
 - [ ] bit manipulation
 - [ ] string
+    - [ ] string matching
 - [ ] permutation
 - [ ] sort
 - [ ] union find
-- [ ] greedy
-- [ ] dynamic programming
 - [ ] recursive
 - [ ] back tracking
-- [ ] divide and conquer
 - [ ] search
     - [ ] dfs
     - [ ] bfs
-## ds
+    - [ ] binary search
 - [ ] linked list
 - [ ] tree
+    - [ ] binary tree
+    - [ ] segment tree
+    - [ ] binary prefix tree
+    - [ ] AVL tree
+    - [ ] prefix tree
+    - [ ] radix tree
 - [ ] heap
+    - [ ] fibonacci heap
+    - [ ] priority queue
 - [ ] bitset
 - [ ] queue
 - [ ] stack
 - [ ] set
 - [ ] graph
+    - [ ] minimum spanning tree
+    - [ ] shortest path
+    - [ ] topological sort
 - [ ] array
 - [ ] matrix
 
