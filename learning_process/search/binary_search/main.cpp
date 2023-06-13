@@ -144,3 +144,17 @@ int findLeftMinInRotatedArray(vector<int>& nums){
     // At this point, left and right will be pointing to the original 0 index
     return left;
 }
+
+pair<int, int> findInterval(vector<int>& nums, int target){
+    int l = 0, r = nums.size()-1;
+    while (l <= r){
+            int m = l + (r-l) / 2;
+            if (nums[m] > target){
+                r = m - 1;
+            }else{
+                l = m + 1;
+            }
+        }
+        
+    return make_pair(r, l);
+}
